@@ -5,7 +5,8 @@ import {createSlice} from '@reduxjs/toolkit';
 const initialState = {
     items: [],
     loading: false,
-    error: null
+    error: null,
+    url: ''
 };
 
 
@@ -18,7 +19,7 @@ const listReducer = createSlice({
         listReducer_search_start(state, action)
         {
             console.log('listReducer_search_start', action.payload);
-            state = {...state, loading: true, error: null}
+            state = {...state, loading: true, error: null, url: action.payload.url}
 
             return state;
         },
@@ -51,6 +52,9 @@ const listReducer = createSlice({
     },
 });
 
+export const set_listReducer_param_start = (url) => (
+    {url: url}
+);
 export const set_listReducer_param_success = (items) => (
     {items: items}
 );

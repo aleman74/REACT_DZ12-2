@@ -5,20 +5,21 @@ import {createSlice} from '@reduxjs/toolkit';
 const initialState = {
     item: { id: '', name: '', price: '', content: '' },
     loading: false,
-    error: null
+    error: null,
+    url: ''
 };
 
 
 
 const itemReducer = createSlice({
-    name: 'data',
+    name: 'data2',
     initialState,
     reducers: {
 
         itemReducer_search_start(state, action)
         {
             console.log('itemReducer_search_start', action.payload);
-            state = {...state, loading: true, error: null}
+            state = {...state, loading: true, error: null, url: action.payload.url}
 
             return state;
         },
@@ -49,6 +50,9 @@ const itemReducer = createSlice({
     },
 });
 
+export const set_itemReducer_param_start = (url) => (
+    {url: url}
+);
 export const set_itemReducer_param_success = (item) => (
     {item: item}
 );

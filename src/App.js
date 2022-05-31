@@ -5,6 +5,8 @@ import appStore from './store/store';
 
 import List from "./components/List";
 import Item from "./components/Item";
+import List2 from "./components/List2";
+import Item2 from "./components/Item2";
 
 
 function App() {
@@ -15,8 +17,8 @@ function App() {
 
                 <Routes>
 
-                  <Route path='/' element={<List />} />
-                  <Route path='/:id/details' element={<Item />} />
+                  <Route path='/' element={<List2 />} />
+                  <Route path='/:id/details' element={<Item2 />} />
 
                 </Routes>
 
